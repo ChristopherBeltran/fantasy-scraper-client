@@ -15,6 +15,21 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDyTp-3TRr8UHPEdH_tlTxgNDl8_a0K7lE",
+        authDomain: "fantasy-news-dd7e3.firebaseapp.com",
+        databaseURL: "https://fantasy-news-dd7e3.firebaseio.com",
+        projectId: "fantasy-news-dd7e3",
+        storageBucket: "",
+        messagingSenderId: "158256634893",
+        appId: "1:158256634893:web:8b265a6a5ef12324084944"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
