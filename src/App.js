@@ -1,21 +1,23 @@
 import React from "react";
-import NavBar from "./components/NavBar";
+import { Route, Switch, withRouter } from 'react-router-dom'
+import Home from './components/Home.js'
 
-function App() {
 
-  if (loading) {
+
+
+
+class App extends React.Component {
+
+  render(){
     return (
-      <div>Loading...</div>
+      <div className="App">
+          <Switch>
+          <Route exact path='/' render={({history})=><Home history={history}/>}/>
+          </Switch>
+      </div>
     );
   }
-
-  return (
-    <div className="App">
-      <header>
-        <NavBar />
-      </header>
-    </div>
-  );
 }
 
-export default App;
+
+export default withRouter(App);
