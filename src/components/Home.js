@@ -2,13 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { Button, Container, Card, Divider, Header } from 'semantic-ui-react'
 import '../Home.css'
+import { connect } from 'react-redux'
+import { yahooLogin } from '../actions/Login.js'
 
 class Home extends React.Component {
 
 
     handleClick = (e) => {
         e.persist()
-        console.log(e.target.name)
+        if(e.target.name === 'yahoo'){
+            this.props.yahooLogin(this.props.history);
+        } else if(e.target.name === 'espn'){
+            console.log('espn')
+        }
     }
 
 
@@ -33,4 +39,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default connect(null, { yahooLogin })(Home);

@@ -1,7 +1,12 @@
-const firebase = require('firebase');
-const firebaseui = require('firebaseui');
+//import { firebase } from 'firebase'
 
-const provider = new firebase.auth.OAuthProvider('yahoo.com');
+
+//const firebase = require('firebase');
+//const firebaseui = require('firebaseui');
+
+//const provider = new firebase.auth.OAuthProvider('yahoo.com');
+import * as firebase from "firebase/app";
+
 
 
 
