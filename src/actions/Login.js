@@ -5,7 +5,7 @@ const provider = new firebase.auth.OAuthProvider('yahoo.com');
 
 
 
-export const yahooLogin = () => {
+export const yahooLogin = (history) => {
     return dispatch => {
         const provider = new firebase.auth.OAuthProvider('yahoo.com');
         provider.addScope('fspt-r');
@@ -18,6 +18,7 @@ export const yahooLogin = () => {
     // Yahoo OAuth ID token can be retrieved by calling:
     // result.credential.idToken
     localStorage.setItem('sessionID', result.credential.idToken)
+    history.push('/dashboard')
   })
   .catch(function(error) {
     // Handle error.
