@@ -17,21 +17,30 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+  
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+
     <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
+      const firebaseConfig = {
         apiKey: "AIzaSyBouIAxKO8yEqgeYvuop_xuzv2u7Bxg-6E",
         authDomain: "fantasy-news-ddeeb.firebaseapp.com",
         databaseURL: "https://fantasy-news-ddeeb.firebaseio.com",
         projectId: "fantasy-news-ddeeb",
-        storageBucket: "",
+        storageBucket: "fantasy-news-ddeeb.appspot.com",
         messagingSenderId: "620542976138",
         appId: "1:620542976138:web:d4e9350aa95cce41c98d73"
       };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
