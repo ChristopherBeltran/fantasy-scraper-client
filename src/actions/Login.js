@@ -45,32 +45,32 @@ firebase.initializeApp(firebaseConfig);
 //}
 
 export const postLogin = () => {
-  debugger;
-  return dispatch => {
-    firebase.auth().getRedirectResult()
+  console.log('hit again')
+  firebase.auth().getRedirectResult()
     .then(function(result) {
-      console.log(result)
+      console.log(result.additionalUserInfo)
     })
     .catch(function(error) {
       console.log(error)
     })
-}
+
 }
 
 export const yahooLogin = (history) => {
+
     return dispatch => {
         provider.addScope('fspt-r');
-        firebase.auth().signInWithRedirect(provider)
-        .then(r => r.json())
-        .then(response => {
-          if (response.error) {
-            alert(response.error)
-          } else {
-            history.push('/dashboard')
-          }
-          // Handle error.
+        firebase.auth().signInWithPopup(provider)
+        .then(function(result) {
+          console.log(result.credential.accessToken)
+          history.push('/dashboard')
+          dispatch(postLogin())
         })
-    } 
+        .catch(function(error) {
+          console.log(error)
+        })
+      }
 }
+          // Handle error
 
 //TO-DO: 
