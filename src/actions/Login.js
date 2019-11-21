@@ -23,37 +23,10 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
-//export const yahooLogin = (history) => {
-//    return dispatch => {
-//        provider.addScope('fspt-r');
-//        firebase.auth().signInWithPopup(provider)
-//  .then(function(result) {
-//    // User is signed in.
-//    // IdP data available in result.additionalUserInfo.profile.
-//    // Yahoo OAuth access token can be retrieved by calling:
-//    // result.credential.accessToken
-//    // Yahoo OAuth ID token can be retrieved by calling:
-//    // result.credential.idToken
-//    localStorage.setItem('sessionID', result.credential.idToken)
-//    history.push('/dashboard')
-//  })
-//  .catch(function(error) {
-//    console.log(error)
-//  });
-//    }    
-//}
-
-export const postLogin = () => {
-  console.log('hit again')
-  firebase.auth().getRedirectResult()
-    .then(function(result) {
-      console.log(result.additionalUserInfo)
-    })
-    .catch(function(error) {
-      console.log(error)
-    })
-
+export const confirmedYahooLogin = () => {
+  return {
+    type: "YAHOO_LOGIN"
+  }
 }
 
 export const yahooLogin = (history) => {
@@ -64,13 +37,15 @@ export const yahooLogin = (history) => {
         .then(function(result) {
           console.log(result.credential.accessToken)
           history.push('/dashboard')
-          dispatch(postLogin())
+          dispatch(confirmedYahooLogin())
         })
         .catch(function(error) {
           console.log(error)
         })
       }
 }
-          // Handle error
 
 //TO-DO: 
+// * set up call to the yahoo sports API with the OAuth token that is returned from the yahooLogin method
+// * render content on dashboard page
+// * create redux actions and state for when a user is logged into yahoo
