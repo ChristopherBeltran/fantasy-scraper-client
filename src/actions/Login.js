@@ -10,7 +10,7 @@ import { Client } from 'espn-fantasy-football-api';
 
 
 var provider = new firebase.auth.OAuthProvider('yahoo.com'); //yahoo initialization
-const myClient = new Client({ leagueId: 691895 });  //espn initialization
+const myClient = new Client({ leagueId: 691895 });  //espn initializationn
 myClient.setCookies({ espnS2: 'AEAdcAuss9ehaF6A6dYl218hXSqH56vVi%2BPiRsGkomu5ZjaiXGc37YUXauByMbJwqgjgx7a%2FeGw4vN1rY3XeqUfJ56rWumlRBu7l%2F12iyH4IOSiHkrqfwweQSLAdgHOpN9vdbsY%2FhPNUsOmbz9K2aebvh9AjJbPKq6K%2F8bPnfOdtULNbR%2FLbZUvwpwAeAPNbtvkUe2Pk0DOv9XZoUMRQ5KuNXUMzRLvH%2B8Fuin1XMsMENLRcDe86IHSxRW1IHmU34KX3Htbh091goO%2FGQ0dTOOHU%2BoAbGtnlBMYnOYTEJF%2B3NSRsb5QK8U25FtlM2RTSyKU%3D', SWID: '{07F2C635-DB39-41EA-816E-5A36E98143D4}' });
 
 
