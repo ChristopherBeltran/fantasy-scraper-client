@@ -13,7 +13,7 @@ const cookies = new Cookies();
 
 
 var provider = new firebase.auth.OAuthProvider('yahoo.com'); //yahoo initialization
-const myClient = new Client({ leagueId: 691895 });  //espn initializationn
+export const myClient = new Client({ leagueId: 691895 });  //espn initializationn
 
 
 const firebaseConfig = {
@@ -55,6 +55,13 @@ export const yahooLogin = (history) => {
           console.log(error)
         })
       }
+}
+
+export const espnLeagueFetch = () => {
+  myClient.getLeagueInfo()
+  .then(function(result) {
+    console.log(result)
+  })
 }
 
 
