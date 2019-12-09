@@ -4,7 +4,6 @@ import { Button, Container, Card, Divider, Header } from 'semantic-ui-react'
 import '../Home.css'
 import { connect } from 'react-redux'
 import { yahooLogin } from '../actions/Login.js'
-import { espnLogin } from '../actions/Login.js'
 
 class Home extends React.Component {
 
@@ -13,8 +12,6 @@ class Home extends React.Component {
         e.persist()
         if(e.target.name === 'yahoo'){
             this.props.yahooLogin(this.props.history);
-        } else if(e.target.name === 'espn'){
-            this.props.espnLogin(this.props.history)
         }
     }
 
@@ -30,9 +27,6 @@ class Home extends React.Component {
                         <Card raised={true} centered={true}>
                             <Button onClick={e => this.handleClick(e)} name="yahoo">Yahoo Sign In</Button>
                         </Card>
-                        <Card raised={true} centered={true}>
-                            <Button onClick={e => this.handleClick(e)} name="espn">ESPN Sign In</Button>
-                        </Card>
                     </Card.Group>
                 </Container>
             </div>
@@ -40,4 +34,4 @@ class Home extends React.Component {
     }
 }
 
-export default connect(null, { yahooLogin, espnLogin })(Home);
+export default connect(null, { yahooLogin })(Home);
