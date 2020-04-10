@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.2.3",
-    "auth0-js": "^9.11.3",
+    "auth0-js": "^9.13.2",
     "espn-fantasy-football-api": "^0.15.0",
     "firebase": "^6.6.2",
     "firebaseui": "^4.2.0",
